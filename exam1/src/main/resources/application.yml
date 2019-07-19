@@ -1,0 +1,37 @@
+server:
+    port: 8080
+    error:
+      path: /error
+spring:
+  thymeleaf:
+    suffix: .html
+    cache: false
+    encoding: UTF-8
+    prefix:  classpath:/templates/
+  profiles:
+        active: prod
+  datasource:
+    driver-class-name: ${DRIVERCLASSNAME}
+    url: ${URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+  jpa:
+      hibernate:
+        ddl-auto: create
+      show-sql: true
+mybatis:
+  mapper-locations: classpath:mapper/*
+  type-aliases-package: com.wx.exam1.domain.*
+
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+
+
+
+
